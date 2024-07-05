@@ -1,0 +1,7 @@
+**/build/*
+**/node_modules/*
+
+# Doc and examples
+**/storybook-static/*
+**/typedoc
+**/.docusaurus
