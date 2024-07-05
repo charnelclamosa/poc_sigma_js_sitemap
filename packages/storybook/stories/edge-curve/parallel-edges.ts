@@ -35,31 +35,44 @@ export default () => {
   const secondRow = -2;
   const thirdRow = -4;
 
+  // Legend:
+  // key: ID of the node.
+  // 
+  /**
+   * Legend:
+   * key: ID of the node.
+   * label: Label of the node.
+   * col: Column position of the node.
+   * row: Row position of the node.
+   * size: Size of the node. 
+   */
   const myNodes = [
     // First row
-    {key: "a_1", label: "WCChw", x: firstCol, y: firstRow, size: nodeSize},
-    {key: "a_2", label: "WS Econ", x: secondCol, y: firstRow, size: nodeSize},
-    {key: "a_3", label: "L+t_L HE", x: thirdCol, y: firstRow, size: nodeSize},
-    {key: "a_4", label: "WT_im", x: fourthCol, y: firstRow, size: nodeSize},
-    {key: "a_5", label: "L+t+L", x: fifthCol, y: firstRow, size: nodeSize},
+    {key: "a_1", label: "WCChw", col: firstCol, row: firstRow, size: nodeSize},
+    {key: "a_2", label: "WS Econ", col: secondCol, row: firstRow, size: nodeSize},
+    {key: "a_3", label: "L+t_L HE", col: thirdCol, row: firstRow, size: nodeSize},
+    {key: "a_4", label: "WT_im", col: fourthCol, row: firstRow, size: nodeSize},
+    {key: "a_5", label: "L+t+L", col: fifthCol, row: firstRow, size: nodeSize},
     // Second row
-    {key: "b_1", label: "ACChW", x: firstCol, y: secondRow, size: nodeSize},
-    {key: "b_2", label: "WCChW", x: secondCol, y: secondRow, size: nodeSize},
-    {key: "b_3", label: "CSCV C&M", x: thirdCol, y: secondRow, size: nodeSize},
-    {key: "b_4", label: "DiffWP&PC", x: fourthCol, y: secondRow, size: nodeSize},
-    {key: "b_5", label: "CT", x: fifthCol, y: secondRow, size: nodeSize},
+    {key: "b_1", label: "ACChW", col: firstCol, row: secondRow, size: nodeSize},
+    {key: "b_2", label: "WCChW", col: secondCol, row: secondRow, size: nodeSize},
+    {key: "b_3", label: "CSCV C&M", col: thirdCol, row: secondRow, size: nodeSize},
+    {key: "b_4", label: "DiffWP&PC", col: fourthCol, row: secondRow, size: nodeSize},
+    {key: "b_5", label: "CT", col: fifthCol, row: secondRow, size: nodeSize},
     // Third col
-    {key: "c_1", label: "AH", x: firstCol, y: thirdRow, size: nodeSize},
-    {key: "c_2", label: "CWL", x: secondCol, y: thirdRow, size: nodeSize},
-    {key: "c_3", label: "VSVV C&M", x: thirdCol, y: thirdRow, size: nodeSize},
-    {key: "c_4", label: "WFR", x: fourthCol, y: thirdRow, size: nodeSize},
-    {key: "c_5", label: "AHU", x: fifthCol, y: thirdRow, size: nodeSize},
+    {key: "c_1", label: "AH", col: firstCol, row: thirdRow, size: nodeSize},
+    {key: "c_2", label: "CWL", col: secondCol, row: thirdRow, size: nodeSize},
+    {key: "c_3", label: "VSVV C&M", col: thirdCol, row: thirdRow, size: nodeSize},
+    {key: "c_4", label: "WFR", col: fourthCol, row: thirdRow, size: nodeSize},
+    {key: "c_5", label: "AHU", col: fifthCol, row: thirdRow, size: nodeSize},
   ];
+
+  // Create the nodes.
   myNodes.forEach((value) => {
     graph.addNode(value.key, {
       label: value.label, 
-      x: value.x, 
-      y: value.y, 
+      x: value.col, 
+      y: value.row, 
       size: nodeSize, 
       type: "image", 
       image: "https://icons.getbootstrap.com/assets/icons/person.svg" 
